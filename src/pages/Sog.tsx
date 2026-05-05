@@ -140,6 +140,14 @@ const Sog = () => {
                             </span>
                           ))}
                         </div>
+                        <a
+                          href={c.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-warmth hover:underline"
+                        >
+                          Se kirke →
+                        </a>
                       </div>
                     </article>
                   ))}
