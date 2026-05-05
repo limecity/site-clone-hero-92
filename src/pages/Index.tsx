@@ -87,9 +87,9 @@ const Index = () => {
                 {tags.map(({ label, icon: Icon }) => (
                   <button
                     key={label}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-[11px] text-foreground transition hover:border-warmth hover:text-warmth"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground transition hover:border-warmth hover:text-warmth"
                   >
-                    <Icon className="h-3 w-3" />
+                    <Icon className="h-4 w-4" />
                     {label}
                   </button>
                 ))}
