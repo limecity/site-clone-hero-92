@@ -75,7 +75,7 @@ const Index = () => {
                   className="w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
                 />
               </div>
-              <button className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-forest px-6 py-4 text-sm font-medium text-sand transition hover:bg-forest-light">
+              <button className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-forest px-10 py-5 text-base font-semibold text-sand transition hover:bg-forest-light">
                 <Search className="h-4 w-4" />
                 Søg kirker
               </button>
