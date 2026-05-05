@@ -94,7 +94,15 @@ const Troesretninger = () => {
               {filters.map((f) => (
                 <button
                   key={f}
-                  onClick={() => setActive(f)}
+                  onClick={() => {
+                    setActive(f);
+                    if (f === "Alle") {
+                      searchParams.delete("kategori");
+                    } else {
+                      searchParams.set("kategori", f);
+                    }
+                    setSearchParams(searchParams, { replace: true });
+                  }}
                   className={`rounded-full px-5 py-2.5 text-sm font-medium transition ${
                     active === f
                       ? "bg-forest text-sand"
