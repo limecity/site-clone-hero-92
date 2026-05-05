@@ -1,6 +1,8 @@
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import heroImage from "@/assets/hero-community.jpg";
+import citykirkenImg from "@/assets/citykirken.jpg";
+import domkirkeImg from "@/assets/domkirke.jpg";
 import {
   Search,
   MapPin,
@@ -170,7 +172,7 @@ const Index = () => {
                 time: "Søndag kl. 10:00",
                 desc: "En frikirke i hjertet af Aarhus med fokus på moderne lovsang, ungdomsarbejde og nære fællesskaber på tværs af generationer.",
                 tags: ["Lovsang", "Ungdomsarbejde", "Fællesskab"],
-                img: "https://images.unsplash.com/photo-1438032005730-c779502df39b?w=900&q=80",
+                img: citykirkenImg,
               },
               {
                 badge: "Folkekirke",
@@ -179,7 +181,7 @@ const Index = () => {
                 time: "Søndag kl. 10:00 og 17:00",
                 desc: "Danmarks længste kirke og et historisk vartegn for byen. Domkirken byder på højtidelige gudstjenester, smuk orgelmusik og et aktivt menighedsliv.",
                 tags: ["Orgel", "Kor", "Familiefokus"],
-                img: "https://images.unsplash.com/photo-1543968996-ee822b8176ba?w=900&q=80",
+                img: domkirkeImg,
               },
             ].map((c) => (
               <article
