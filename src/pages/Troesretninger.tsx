@@ -135,10 +135,10 @@ const Troesretninger = () => {
                     <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
                       <Icon className="h-7 w-7" strokeWidth={1.75} />
                     </div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-warmth">
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.15em] text-warmth">
                       {d.category}
                     </div>
-                    <h3 className="mt-2 font-serif text-2xl">{d.name}</h3>
+                    <h3 className="mt-1.5 font-serif text-xl">{d.name}</h3>
                     <p className="mt-3 flex-1 text-sm text-muted-foreground">
                       {d.subtitle}
                     </p>
