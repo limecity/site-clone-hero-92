@@ -105,6 +105,5 @@ All colors MUST be HSL.
   }
   h1, h2, h3 {
     font-family: "DM Serif Display", serif;
-    color: hsl(var(--forest));
   }
 }

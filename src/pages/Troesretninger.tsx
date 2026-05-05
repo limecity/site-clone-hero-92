@@ -49,13 +49,13 @@ const Troesretninger = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative bg-forest pb-32 pt-32 text-sand">
+      <section className="relative bg-forest pb-40 pt-32 text-sand">
         <Header variant="back-home" />
-        <div className="container relative max-w-3xl text-center">
+        <div className="container relative max-w-3xl pt-12 text-center">
           <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
             Opslagsværk
           </div>
-          <h1 className="font-serif text-5xl leading-[1.05] md:text-6xl">
+          <h1 className="font-serif text-5xl leading-[1.05] text-sand md:text-6xl">
             Kirkeretninger
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-sand/80">
@@ -65,7 +65,7 @@ const Troesretninger = () => {
         </div>
       </section>
 
-      <section className="-mt-16 pb-24">
+      <section className="-mt-20 pb-24">
         <div className="container max-w-6xl">
           <div className="flex flex-col gap-3 rounded-2xl bg-card p-3 shadow-lg md:flex-row md:items-center md:gap-2">
             <div className="flex flex-1 items-center gap-3 rounded-xl bg-muted px-4 py-3">
