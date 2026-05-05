@@ -54,9 +54,9 @@ export const Header = ({ variant = "home" }: { variant?: Variant }) => {
                 </div>
               </div>
             </div>
-            <a href="#find" className="text-sm hover:text-warmth transition-colors">
+            <Link to="/sog" className="text-sm hover:text-warmth transition-colors">
               Find kirke
-            </a>
+            </Link>
             <Link
               to="/ansog"
               className="inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-2.5 text-sm text-sand backdrop-blur transition hover:bg-sand/15"
@@ -140,13 +140,13 @@ export const Header = ({ variant = "home" }: { variant?: Variant }) => {
                 </Link>
               ))}
             </div>
-              <a
-                href="#find"
+              <Link
+                to="/sog"
                 onClick={() => setOpen(false)}
                 className="border-b border-sand/15 py-4 font-serif text-2xl"
               >
                 Find kirke
-              </a>
+              </Link>
               <Link
                 to="/ansog"
                 onClick={() => setOpen(false)}
