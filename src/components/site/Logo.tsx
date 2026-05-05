@@ -7,7 +7,7 @@ export const Logo = ({ light = false }: { light?: boolean }) => {
       <img
         src={logoImg}
         alt="kirken.dk — find kirker i hele Danmark"
-        className={`h-14 w-auto ${light ? "" : "invert"}`}
+        className={`h-16 w-auto ${light ? "" : "invert"}`}
       />
     </Link>
   );
