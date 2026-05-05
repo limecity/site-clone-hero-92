@@ -72,10 +72,10 @@ const Index = () => {
 
           <div
             id="find"
-            className="mt-12 w-full max-w-4xl rounded-3xl bg-card p-4 text-left shadow-2xl md:p-5"
+            className="mt-12 w-full max-w-4xl rounded-3xl bg-card p-6 text-left shadow-2xl md:p-7"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex flex-1 items-center gap-4 px-4 py-2">
+            <div className="flex items-center gap-5">
+              <div className="flex flex-1 items-center gap-5 px-5 py-3">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
                   <MapPin className="h-5 w-5" strokeWidth={2.25} />
                 </span>
@@ -99,8 +99,8 @@ const Index = () => {
               </button>
             </div>
 
-            <div className="mt-4 border-t border-border pt-4">
-              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+            <div className="mt-6 border-t border-border pt-6">
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Hvad søger du?
               </div>
               <div className="flex flex-wrap justify-center gap-3">
