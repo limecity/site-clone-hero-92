@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,35 +10,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 40 33% 98%;
+    --foreground: 170 30% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 170 30% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 170 30% 15%;
+    --primary: 170 30% 22%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 170 30% 22%;
+    --muted: 40 15% 95%;
+    --muted-foreground: 170 10% 45%;
+    --accent: 30 60% 52%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    --border: 40 15% 90%;
+    --input: 40 15% 90%;
+    --ring: 170 30% 22%;
+    --radius: 0.75rem;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --forest: 170 30% 22%;
+    --forest-light: 170 20% 35%;
+    --sand: 40 33% 96%;
+    --sand-dark: 40 20% 88%;
+    --warmth: 30 60% 52%;
+    --warmth-light: 30 70% 92%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +101,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: "DM Serif Display", serif;
+    color: hsl(var(--forest));
   }
 }
