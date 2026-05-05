@@ -49,7 +49,7 @@ const Troesretninger = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative bg-forest pb-40 pt-32 text-sand">
+      <section className="relative bg-forest pb-24 pt-32 text-sand">
         <Header variant="back-home" />
         <div className="container relative max-w-3xl pt-12 text-center">
           <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
@@ -65,7 +65,7 @@ const Troesretninger = () => {
         </div>
       </section>
 
-      <section className="-mt-20 pb-24">
+      <section className="pt-8 pb-24">
         <div className="container max-w-6xl">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-3">
             <div className="flex flex-1 items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-sm md:max-w-sm">
