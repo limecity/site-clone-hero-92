@@ -67,8 +67,8 @@ const Troesretninger = () => {
 
       <section className="-mt-20 pb-24">
         <div className="container max-w-6xl">
-          <div className="flex flex-col gap-3 rounded-2xl bg-card p-3 shadow-lg md:flex-row md:items-center md:gap-2">
-            <div className="flex flex-1 items-center gap-3 rounded-xl bg-muted px-4 py-3">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-3">
+            <div className="flex flex-1 items-center gap-3 rounded-full border border-border bg-card px-5 py-3 shadow-sm md:max-w-sm">
               <Search className="h-4 w-4 text-muted-foreground" />
               <input
                 value={query}
@@ -82,10 +82,10 @@ const Troesretninger = () => {
                 <button
                   key={f}
                   onClick={() => setActive(f)}
-                  className={`rounded-full px-4 py-2 text-xs font-medium transition ${
+                  className={`rounded-full px-5 py-2.5 text-sm font-medium transition ${
                     active === f
                       ? "bg-forest text-sand"
-                      : "border border-border text-foreground hover:border-warmth hover:text-warmth"
+                      : "border border-border bg-card text-foreground hover:border-warmth hover:text-warmth"
                   }`}
                 >
                   {f}
