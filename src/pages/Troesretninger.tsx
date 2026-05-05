@@ -55,7 +55,7 @@ const Troesretninger = () => {
           <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
             Opslagsværk
           </div>
-          <h1 className="font-serif text-5xl leading-[1.05] text-sand md:text-6xl">
+          <h1 className="font-serif text-4xl leading-[1.05] text-sand md:text-5xl">
             Kirkeretninger
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-sand/80">

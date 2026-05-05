@@ -28,7 +28,7 @@ const Ansog = () => (
         <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
           For kirker
         </div>
-        <h1 className="font-serif text-5xl leading-[1.05] text-sand md:text-7xl">
+        <h1 className="font-serif text-4xl leading-[1.05] text-sand md:text-6xl">
           Få jeres kirke
           <br />
           med på kirken.dk
@@ -43,7 +43,7 @@ const Ansog = () => (
 
     <section className="py-24">
       <div className="container max-w-3xl">
-        <h2 className="text-center font-serif text-4xl md:text-5xl">
+        <h2 className="text-center font-serif text-3xl md:text-4xl">
           Sådan ansøger I
         </h2>
 

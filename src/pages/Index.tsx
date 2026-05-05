@@ -87,9 +87,9 @@ const Index = () => {
                 {tags.map(({ label, icon: Icon }) => (
                   <button
                     key={label}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs text-foreground transition hover:border-warmth hover:text-warmth"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-[11px] text-foreground transition hover:border-warmth hover:text-warmth"
                   >
-                    <Icon className="h-3.5 w-3.5" />
+                    <Icon className="h-3 w-3" />
                     {label}
                   </button>
                 ))}
@@ -105,7 +105,7 @@ const Index = () => {
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
             Sådan virker det
           </div>
-          <h2 className="mx-auto max-w-3xl font-serif text-4xl md:text-5xl">
+          <h2 className="mx-auto max-w-3xl font-serif text-3xl md:text-4xl">
             Din guide til kirker i Danmark
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
@@ -150,7 +150,7 @@ const Index = () => {
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
               Eksempel
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl">
+            <h2 className="font-serif text-3xl md:text-4xl">
               Søgeresultater for 8000 Aarhus
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
