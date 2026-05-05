@@ -158,7 +158,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
+          <div className="mt-14 space-y-6">
             {[
               {
                 badge: "Frikirke",
@@ -181,37 +181,41 @@ const Index = () => {
             ].map((c) => (
               <article
                 key={c.name}
-                className="overflow-hidden rounded-2xl bg-card shadow-sm transition hover:shadow-lg"
+                className="grid overflow-hidden rounded-2xl bg-card shadow-sm transition hover:shadow-lg md:grid-cols-[280px_1fr]"
               >
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-56 w-full overflow-hidden md:h-full">
                   <img
                     src={c.img}
                     alt={c.name}
                     loading="lazy"
                     className="h-full w-full object-cover"
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-card/95 px-3 py-1 text-xs font-medium text-forest">
+                </div>
+                <div className="p-6 md:p-8">
+                  <span className="inline-flex items-center rounded-full bg-forest px-4 py-1.5 text-xs font-medium text-sand">
                     {c.badge}
                   </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-serif text-2xl">{c.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <h3 className="mt-4 font-serif text-2xl">{c.name}</h3>
+                  <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+                    <MapPin className="h-3.5 w-3.5" />
                     {c.addr}
-                  </p>
-                  <p className="mt-1 text-sm text-warmth">{c.time}</p>
+                  </div>
+                  <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
+                    <CalendarDays className="h-3.5 w-3.5" />
+                    {c.time}
+                  </div>
                   <p className="mt-4 text-sm text-foreground/80">{c.desc}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {c.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full bg-warmth-light px-3 py-1 text-xs text-warmth"
+                        className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-                  <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-forest hover:text-warmth">
+                  <button className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-warmth hover:underline">
                     Se kirke →
                   </button>
                 </div>
