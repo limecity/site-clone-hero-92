@@ -113,7 +113,7 @@ const Index = () => {
             finde en kirke med de aktiviteter og det fællesskab, du søger.
           </p>
 
-          <div className="mt-16 grid gap-10 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: MapPin,
@@ -131,12 +131,15 @@ const Index = () => {
                 text: "Se hvad kirken tilbyder, og find et fællesskab der passer til dig.",
               },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex flex-col items-center text-center">
-                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
-                  <Icon className="h-7 w-7" />
+              <div
+                key={title}
+                className="flex flex-col items-center rounded-2xl bg-card p-10 text-center shadow-sm"
+              >
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
+                  <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mb-3 font-serif text-2xl">{title}</h3>
-                <p className="max-w-xs text-muted-foreground">{text}</p>
+                <h3 className="mb-3 font-serif text-xl">{title}</h3>
+                <p className="max-w-xs text-sm text-muted-foreground">{text}</p>
               </div>
             ))}
           </div>
