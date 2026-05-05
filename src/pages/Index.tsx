@@ -1,4 +1,5 @@
-import { useMemo, useRef, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import heroImage from "@/assets/hero-community.jpg";
@@ -37,50 +38,12 @@ const tags = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
-  const [submitted, setSubmitted] = useState("");
-  const resultsRef = useRef<HTMLDivElement | null>(null);
-
-  const churches = [
-    {
-      badge: "Frikirke",
-      name: "CityKirken Aarhus",
-      addr: "Store Torv 1, 8000 Aarhus C",
-      city: "Aarhus",
-      postal: "8000",
-      time: "Søndag kl. 10:00",
-      desc:
-        "En frikirke i hjertet af Aarhus med fokus på moderne lovsang, ungdomsarbejde og nære fællesskaber på tværs af generationer.",
-      tags: ["Lovsang", "Ungdomsarbejde", "Fællesskab"],
-      img: citykirkenImg,
-    },
-    {
-      badge: "Folkekirke",
-      name: "Aarhus Domkirke",
-      addr: "Store Torv, 8000 Aarhus C",
-      city: "Aarhus",
-      postal: "8000",
-      time: "Søndag kl. 10:00 og 17:00",
-      desc:
-        "Danmarks længste kirke og et historisk vartegn for byen. Domkirken byder på højtidelige gudstjenester, smuk orgelmusik og et aktivt menighedsliv.",
-      tags: ["Orgel", "Kor", "Familiefokus"],
-      img: domkirkeImg,
-    },
-  ];
-
-  const filtered = useMemo(() => {
-    const q = submitted.trim().toLowerCase();
-    if (!q) return [];
-    return churches.filter((c) =>
-      [c.name, c.addr, c.city, c.postal].some((f) => f.toLowerCase().includes(q)),
-    );
-  }, [submitted]);
 
   const handleSearch = () => {
-    setSubmitted(query);
-    setTimeout(() => {
-      resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    const q = query.trim();
+    navigate(q ? `/sog?q=${encodeURIComponent(q)}` : "/sog");
   };
 
   return (
@@ -203,29 +166,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Example / search results */}
-      <section ref={resultsRef} className="bg-sand py-24">
+      {/* Example results */}
+      <section className="bg-sand py-24">
         <div className="container max-w-5xl">
           <div className="text-center">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
-              {submitted ? "Resultater" : "Eksempel"}
+              Eksempel
             </div>
             <h2 className="font-serif text-3xl md:text-4xl">
-              {submitted
-                ? `Søgeresultater for "${submitted}"`
-                : "Søgeresultater for 8000 Aarhus"}
+              Søgeresultater for 8000 Aarhus
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-              {submitted
-                ? filtered.length > 0
-                  ? `Vi fandt ${filtered.length} ${filtered.length === 1 ? "kirke" : "kirker"} der matcher din søgning.`
-                  : "Ingen kirker matcher din søgning. Prøv f.eks. \"Aarhus\" eller \"8000\"."
-                : "Sådan kan det se ud, når du søger efter kirker i dit område."}
+              Sådan kan det se ud, når du søger efter kirker i dit område.
             </p>
           </div>
 
           <div className="mt-14 space-y-6">
-            {(submitted ? filtered : churches).map((c) => (
+            {[
+              {
+                badge: "Frikirke",
+                name: "CityKirken Aarhus",
+                addr: "Store Torv 1, 8000 Aarhus C",
+                time: "Søndag kl. 10:00",
+                desc: "En frikirke i hjertet af Aarhus med fokus på moderne lovsang, ungdomsarbejde og nære fællesskaber på tværs af generationer.",
+                tags: ["Lovsang", "Ungdomsarbejde", "Fællesskab"],
+                img: citykirkenImg,
+              },
+              {
+                badge: "Folkekirke",
+                name: "Aarhus Domkirke",
+                addr: "Store Torv, 8000 Aarhus C",
+                time: "Søndag kl. 10:00 og 17:00",
+                desc: "Danmarks længste kirke og et historisk vartegn for byen. Domkirken byder på højtidelige gudstjenester, smuk orgelmusik og et aktivt menighedsliv.",
+                tags: ["Orgel", "Kor", "Familiefokus"],
+                img: domkirkeImg,
+              },
+            ].map((c) => (
               <article
                 key={c.name}
                 className="grid overflow-hidden rounded-2xl bg-card shadow-sm transition hover:shadow-lg md:grid-cols-[280px_1fr]"
