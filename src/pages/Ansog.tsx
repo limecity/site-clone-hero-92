@@ -24,16 +24,16 @@ const Ansog = () => (
   <div className="min-h-screen bg-background">
     <section className="relative bg-forest pb-24 pt-32 text-sand">
       <Header variant="back-home" />
-      <div className="container relative max-w-3xl text-center">
+      <div className="container relative max-w-3xl pt-8 text-center">
         <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-warmth">
           For kirker
         </div>
-        <h1 className="font-serif text-5xl leading-[1.05] md:text-6xl">
+        <h1 className="font-serif text-5xl leading-[1.05] text-sand md:text-7xl">
           Få jeres kirke
           <br />
           med på kirken.dk
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-sand/80">
+        <p className="mx-auto mt-6 max-w-xl text-base text-sand/80 md:text-lg">
           Vi ønsker at samle de danske kirker ét sted, så mennesker nemt kan
           finde et åndeligt hjem. Hvis I vil være en del af kirken.dk, skal
           jeres præst sende en kort, motiveret ansøgning.
