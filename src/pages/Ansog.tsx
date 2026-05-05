@@ -64,36 +64,32 @@ const Ansog = () => (
               </div>
             </div>
           ))}
+        </div>
 
-          <div className="rounded-2xl border border-border bg-card p-7 shadow-sm">
-            <div className="flex gap-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-warmth-light text-warmth">
-                <ListChecks className="h-6 w-6" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-serif text-2xl">Krav til ansøgningen</h3>
-                <ul className="mt-3 space-y-2 text-muted-foreground">
-                  {[
-                    "Maksimalt 1 A4-side",
-                    "Skrevet og underskrevet af kirkens præst",
-                    "Sendt som PDF til optag@kirken.dk",
-                    "Vi gennemgår ansøgninger 2 gange om året",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warmth" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+        <div className="mt-12 rounded-2xl bg-warmth-light p-8 md:p-10">
+          <div className="flex items-center gap-3">
+            <ListChecks className="h-6 w-6 text-warmth" />
+            <h3 className="font-serif text-2xl">Krav til ansøgningen</h3>
           </div>
+          <ul className="mt-6 grid gap-3 md:grid-cols-2">
+            {[
+              "Maksimalt 1 A4-side",
+              "Skrevet og underskrevet af kirkens præst",
+              "Sendt som PDF til optag@kirken.dk",
+              "Vi gennemgår ansøgninger 2 gange om året",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-foreground/90">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-warmth" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-12 text-center">
           <a
             href="mailto:optag@kirken.dk"
-            className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-4 text-sand transition hover:bg-forest-light"
+            className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-4 font-semibold text-sand transition hover:bg-forest-light"
           >
             <Mail className="h-4 w-4" />
             Send ansøgning til optag@kirken.dk
