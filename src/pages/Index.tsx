@@ -60,26 +60,26 @@ const Index = () => {
 
           <div
             id="find"
-            className="mt-12 w-full max-w-3xl rounded-2xl bg-card p-5 text-left shadow-2xl md:p-6"
+            className="mt-12 w-full max-w-4xl rounded-3xl bg-card p-4 text-left shadow-2xl md:p-5"
           >
-            <div className="flex flex-col gap-3 md:flex-row">
-              <div className="flex flex-1 items-center gap-3 rounded-xl bg-muted px-4 py-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-warmth-light text-warmth">
+            <div className="flex items-center gap-3">
+              <div className="flex flex-1 items-center gap-4 px-4 py-2">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-warmth-light text-warmth">
                   <MapPin className="h-5 w-5" />
                 </span>
                 <input
                   type="text"
                   placeholder="Indtast postnummer eller by — f.eks. 8000 Aarhus"
-                  className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+                  className="w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
                 />
               </div>
-              <button className="inline-flex items-center justify-center gap-2 rounded-xl bg-forest px-8 py-4 text-sm font-medium text-sand transition hover:bg-forest-light">
+              <button className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-forest px-6 py-4 text-sm font-medium text-sand transition hover:bg-forest-light">
                 <Search className="h-4 w-4" />
                 Søg kirker
               </button>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-4 border-t border-border pt-4">
               <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Hvad søger du?
               </div>
@@ -87,7 +87,7 @@ const Index = () => {
                 {tags.map(({ label, icon: Icon }) => (
                   <button
                     key={label}
-                    className="inline-flex items-center gap-2 rounded-full border border-border bg-sand px-3.5 py-1.5 text-xs text-foreground transition hover:border-warmth hover:text-warmth"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs text-foreground transition hover:border-warmth hover:text-warmth"
                   >
                     <Icon className="h-3.5 w-3.5" />
                     {label}
@@ -113,7 +113,7 @@ const Index = () => {
             finde en kirke med de aktiviteter og det fællesskab, du søger.
           </p>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[
               {
                 icon: MapPin,
@@ -131,12 +131,12 @@ const Index = () => {
                 text: "Se hvad kirken tilbyder, og find et fællesskab der passer til dig.",
               },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="text-left">
-                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
-                  <Icon className="h-6 w-6" />
+              <div key={title} className="flex flex-col items-center text-center">
+                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
+                  <Icon className="h-7 w-7" />
                 </div>
                 <h3 className="mb-3 font-serif text-2xl">{title}</h3>
-                <p className="text-muted-foreground">{text}</p>
+                <p className="max-w-xs text-muted-foreground">{text}</p>
               </div>
             ))}
           </div>
