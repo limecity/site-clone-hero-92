@@ -12,6 +12,7 @@ export type Church = {
   desc: string;
   tags: string[];
   img: string;
+  url: string;
 };
 
 export const churches: Church[] = [
@@ -26,6 +27,7 @@ export const churches: Church[] = [
     desc: "En frikirke i hjertet af Aarhus med fokus på moderne lovsang, ungdomsarbejde og nære fællesskaber på tværs af generationer.",
     tags: ["Lovsang", "Ungdomsarbejde", "Fællesskab"],
     img: citykirkenImg,
+    url: "https://www.ckirken.dk/da/",
   },
   {
     slug: "aarhus-domkirke",
@@ -38,5 +40,6 @@ export const churches: Church[] = [
     desc: "Danmarks længste kirke og et historisk vartegn for byen. Domkirken byder på højtidelige gudstjenester, smuk orgelmusik og et aktivt menighedsliv.",
     tags: ["Orgel", "Kor", "Familiefokus"],
     img: domkirkeImg,
+    url: "https://aarhusdomkirke.dk",
   },
 ];
