@@ -191,6 +191,7 @@ const Index = () => {
                 desc: "En frikirke i hjertet af Aarhus med fokus på moderne lovsang, ungdomsarbejde og nære fællesskaber på tværs af generationer.",
                 tags: ["Lovsang", "Ungdomsarbejde", "Fællesskab"],
                 img: citykirkenImg,
+                url: "https://www.ckirken.dk/da/",
               },
               {
                 badge: "Folkekirke",
@@ -200,6 +201,7 @@ const Index = () => {
                 desc: "Danmarks længste kirke og et historisk vartegn for byen. Domkirken byder på højtidelige gudstjenester, smuk orgelmusik og et aktivt menighedsliv.",
                 tags: ["Orgel", "Kor", "Familiefokus"],
                 img: domkirkeImg,
+                url: "https://aarhusdomkirke.dk",
               },
             ].map((c) => (
               <article
@@ -238,9 +240,14 @@ const Index = () => {
                       </span>
                     ))}
                   </div>
-                  <button className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-warmth hover:underline">
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-warmth hover:underline"
+                  >
                     Se kirke →
-                  </button>
+                  </a>
                 </div>
               </article>
             ))}
