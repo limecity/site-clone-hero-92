@@ -64,8 +64,8 @@ const Index = () => {
           >
             <div className="flex items-center gap-3">
               <div className="flex flex-1 items-center gap-4 px-4 py-2">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-warmth-light text-warmth">
-                  <MapPin className="h-5 w-5" />
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-warmth-light text-warmth">
+                  <MapPin className="h-5 w-5" strokeWidth={2.25} />
                 </span>
                 <input
                   type="text"
