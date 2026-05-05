@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ArrowLeftRight, Check, Search, X } from "lucide-react";
@@ -15,7 +15,20 @@ import {
 const filters: ("Alle" | Category)[] = ["Alle", ...categoryTags];
 
 const Troesretninger = () => {
-  const [active, setActive] = useState<(typeof filters)[number]>("Alle");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initial = searchParams.get("kategori");
+  const [active, setActive] = useState<(typeof filters)[number]>(
+    (filters as string[]).includes(initial ?? "") ? (initial as Category) : "Alle",
+  );
+
+  useEffect(() => {
+    const k = searchParams.get("kategori");
+    if (k && (filters as string[]).includes(k)) {
+      setActive(k as Category);
+    } else if (!k) {
+      setActive("Alle");
+    }
+  }, [searchParams]);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
@@ -81,7 +94,15 @@ const Troesretninger = () => {
               {filters.map((f) => (
                 <button
                   key={f}
-                  onClick={() => setActive(f)}
+                  onClick={() => {
+                    setActive(f);
+                    if (f === "Alle") {
+                      searchParams.delete("kategori");
+                    } else {
+                      searchParams.set("kategori", f);
+                    }
+                    setSearchParams(searchParams, { replace: true });
+                  }}
                   className={`rounded-full px-5 py-2.5 text-sm font-medium transition ${
                     active === f
                       ? "bg-forest text-sand"

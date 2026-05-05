@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, Menu, X } from "lucide-react";
+import { ArrowLeft, ChevronDown, FileText, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { useState, useEffect } from "react";
+import { categoryTags } from "@/data/denominations";
 
 type Variant = "home" | "back-home" | "back-list";
 
@@ -25,9 +26,34 @@ export const Header = ({ variant = "home" }: { variant?: Variant }) => {
             <a href="#hvad" className="text-sm hover:text-warmth transition-colors">
               Hvad er kirken.dk?
             </a>
-            <Link to="/troesretninger" className="text-sm hover:text-warmth transition-colors">
-              Trosretninger
-            </Link>
+            <div className="group relative">
+              <Link
+                to="/troesretninger"
+                className="inline-flex items-center gap-1 text-sm transition-colors hover:text-warmth"
+              >
+                Trosretninger
+                <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
+              </Link>
+              <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100">
+                <div className="min-w-[220px] overflow-hidden rounded-2xl border border-border bg-card text-foreground shadow-xl">
+                  <Link
+                    to="/troesretninger"
+                    className="block px-5 py-3 text-sm transition hover:bg-muted hover:text-warmth"
+                  >
+                    Alle
+                  </Link>
+                  {categoryTags.map((c) => (
+                    <Link
+                      key={c}
+                      to={`/troesretninger?kategori=${encodeURIComponent(c)}`}
+                      className="block border-t border-border px-5 py-3 text-sm transition hover:bg-muted hover:text-warmth"
+                    >
+                      {c}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             <a href="#find" className="text-sm hover:text-warmth transition-colors">
               Find kirke
             </a>
@@ -102,6 +128,18 @@ export const Header = ({ variant = "home" }: { variant?: Variant }) => {
               >
                 Trosretninger
               </Link>
+            <div className="-mt-2 mb-2 flex flex-col gap-1 border-b border-sand/15 pb-4 pl-4">
+              {categoryTags.map((c) => (
+                <Link
+                  key={c}
+                  to={`/troesretninger?kategori=${encodeURIComponent(c)}`}
+                  onClick={() => setOpen(false)}
+                  className="py-1.5 text-sm text-sand/80 hover:text-warmth"
+                >
+                  {c}
+                </Link>
+              ))}
+            </div>
               <a
                 href="#find"
                 onClick={() => setOpen(false)}
