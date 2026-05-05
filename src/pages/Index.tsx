@@ -83,7 +83,7 @@ const Index = () => {
               <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Hvad søger du?
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center gap-3">
                 {tags.map(({ label, icon: Icon }) => (
                   <button
                     key={label}
